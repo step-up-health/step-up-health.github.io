@@ -308,12 +308,12 @@
             </figure>
         </section>
         <script type='text/javascript'>
-            var mobile = /iPhone|iPod|iPad|Android|Windows Phone/i.test(navigator.userAgent.toLowerCase());
+            var mobile = /iPhone|iPod|iPad|Android|Windows Phone|Safari/i.test(navigator.userAgent.toLowerCase());
             if (!mobile) {
                 function scrollUpdate() {
                     document.getElementById('fakehero').style.top = -window.scrollY + 'px';
                 }
-                window.addEventListener('scroll', scrollUpdate);
+                window.attachEventListener('scroll', scrollUpdate);
                 scrollUpdate();
             } else {
                 var fakehero = document.getElementById('fakehero');
