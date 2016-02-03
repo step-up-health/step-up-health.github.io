@@ -315,6 +315,9 @@
                 }
                 window.addEventListener('scroll', scrollUpdate);
                 scrollUpdate();
+            } else {
+                var fakehero = document.getElementById('fakehero');
+                fakehero.parentNode.removeChild(fakehero);
             }
         </script>
     </body>
