@@ -72,11 +72,6 @@
                 filter: blur(4px);
                 background-color: rgb(96, 127, 130);
             }
-            @media (max-width: 768px) {
-                #fakehero-wrapper {
-                    display: none;
-                }
-            }
             #floating-header #logolink {
                 display: inline-block;
                 height: 120px;
@@ -301,11 +296,14 @@
             </figure>
         </section>
         <script type='text/javascript'>
-            function scrollUpdate() {
-                document.getElementById('fakehero').style.top = -window.scrollY + 'px';
+            var mobile = /iPhone|iPod|iPad|Android|Windows Phone/i.test(navigator.userAgent.toLowerCase());
+            if (!mobile) {
+                function scrollUpdate() {
+                    document.getElementById('fakehero').style.top = -window.scrollY + 'px';
+                }
+                window.addEventListener('scroll', scrollUpdate);
+                scrollUpdate();
             }
-            window.addEventListener('scroll', scrollUpdate);
-            scrollUpdate();
         </script>
     </body>
 </html>
