@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=550, initial-scale=0.8, user-scalable=no">
         <title>StepUp! for Pebble</title>
         <style media="screen">
+            /* HACK: the entirety of CSS. */
             body {
                 margin: 0;
                 font-family: Lato, Helvetica, sans-serif;
@@ -48,8 +49,34 @@
                 }
             }
             #person-running {
-                background-image: url(person-running.jpg);
+                background-image: url(person-running-opt.jpg);
                 background-position: 100% 50%;
+            }
+            #person-running-call-to-action {
+                background-image: url(person-running-footer-opt.jpg);
+                background-position: 50% 50%;
+                height: 25vw;
+                color: white;
+                background-repeat: none;
+                background-size: cover;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-end;
+            }
+            #person-running-call-to-action .humongous-button {
+                margin: 0 4rem 0 0;
+                background-color: rgba(255, 255, 255, 0.8);
+            }
+            @media (min-width: 800px) {
+                #person-running-call-to-action .humongous-button {
+                    font-size: 140%;
+                }
+            }
+            @media (min-width: 1000px) {
+                #person-running-call-to-action .humongous-button {
+                    font-size: 200%;
+                }
             }
             #floating-header, #fakehero-wrapper {
                 position: fixed;
@@ -142,18 +169,18 @@
             .humongous-button {
                 display: inline-block;
                 text-decoration: none;
-                box-shadow: inset 0 -60px 30px -200px transparent,
-                            inset 0 0 0 4px #FFFFFF;
+                box-shadow: inset 0 -4em 2em -10em transparent,
+                            inset 0 0 0 0.3em #FFFFFF;
                 transition: box-shadow 0.2s, color 0.2s;
                 font-family: Lato, Helvetica, sans-serif;
                 font-weight: 700;
                 color: #FFFFFF;
                 margin: 1rem auto;
-                padding: 1rem;
+                padding: 1em;
                 border-radius: 4px;
             }
             .humongous-button.blue {
-                box-shadow: inset 0 -60px 30px -200px transparent,
+                box-shadow: inset 0 -4em 2em -10em transparent,
                             inset 0 0 0 4px #0B82D6;
                 color: #0B82D6;
             }
@@ -161,25 +188,25 @@
             .humongous-button:focus,
             .humongous-button:active {
                 transition: box-shadow 0.2s, color 0.2s;
-                box-shadow: inset 0 -60px 30px 30px #FFFFFF,
-                            inset 0 0 0 30px #FFFFFF;
+                box-shadow: inset 0 -4em 2em 2em #FFFFFF,
+                            inset 0 0 0 2em #FFFFFF;
                 color: #222222;
             }
             .humongous-button.blue:hover,
             .humongous-button.blue:focus,
             .humongous-button.blue:active {
-                box-shadow: inset 0 -60px 30px 30px #0B82D6,
-                            inset 0 0 0 30px #0B82D6;
+                box-shadow: inset 0 -4em 2em 2em #0B82D6,
+                            inset 0 0 0 2em #0B82D6;
                 color: #FFFFFF;
             }
             .humongous-button:active {
                 transition: box-shadow 0.2s, color 0.2s;
-                box-shadow: inset 0 -75px 30px 30px #CCCCCC,
-                            inset 0 0 0 30px #FFFFFF;
+                box-shadow: inset 0 -5em 2em 2em #CCCCCC,
+                            inset 0 0 0 2em #FFFFFF;
             }
             .humongous-button.blue:active {
-                box-shadow: inset 0 -60px 30px 30px #36B6FF,
-                            inset 0 0 0 30px #0B82D6;
+                box-shadow: inset 0 -5em 2em 2em #36B6FF,
+                            inset 0 0 0 2em #0B82D6;
             }
             h2 {
                 margin: 0 0 1.5rem;
@@ -283,7 +310,7 @@
                 </article>
             </section>
         </div>
-        <section class="centered">
+        <section class="centered" id="person-running-call-to-action">
             <a href="#" class="humongous-button blue">
                 Get StepUp! on your Pebble
             </a>
