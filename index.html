@@ -313,7 +313,7 @@
                 function scrollUpdate() {
                     document.getElementById('fakehero').style.top = -window.scrollY + 'px';
                 }
-                window.attachEventListener('scroll', scrollUpdate);
+                window.addEventListener('scroll', scrollUpdate);
                 scrollUpdate();
             } else {
                 var fakehero = document.getElementById('fakehero');
