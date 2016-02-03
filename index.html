@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300,400italic' rel='stylesheet' type='text/css' />
+        <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet' type='text/css' />
+        <meta charset="utf-8">
+        <title>StepUp! for Pebble</title>
+        <style media="screen">
+            body {
+                margin: 0;
+                font-family: Lato, Helvetica, sans-serif;
+            }
+            .big-img {
+                height: calc(100vh - 9rem + 10px);
+                width: calc(100vw + 10px);
+                background-size: cover;
+                margin: -5px -5px 0;
+            }
+            .img-r {
+                order: 100;
+            }
+            .img-l {
+                order: 0;
+            }
+            .product-img {
+                max-width: 50%;
+                max-height: 550px;
+                flex-shrink: 0;
+                flex-grow: 0;
+                margin-top: -90px;
+                margin-bottom: -90px;
+                align-self: center;
+            }
+            #person-running {
+                background-image: url(person-running.jpg);
+                background-position: 100% 50%;
+            }
+            #floating-header, #fakehero-wrapper {
+                position: fixed;
+                top: 0;
+                z-index: 5;
+                width: calc(100vw + 20px);
+                overflow: hidden;
+                display: block;
+                height: 120px;
+            }
+            #floating-header {
+                background: rgba(0, 0, 0, 0.3);
+            }
+            #fakehero-wrapper {
+                margin: -5px -5px 0;
+                z-index: 4;
+                height: 125px;
+            }
+            #fakehero {
+                position: absolute;
+                top: 0;
+                z-index: 1;
+                height: calc(100vh - 9rem + 10px);
+                width: calc(100vw + 10px);
+                overflow: hidden;
+                background: url(person-running.jpg) no-repeat;
+                background-position: 100% 50%;
+                background-size: cover;
+                filter: blur(4px);
+                background-color: rgb(96, 127, 130);
+            }
+            #floating-header #logolink {
+                display: inline-block;
+                height: 120px;
+                width: 12rem;
+                margin-left: 6px;
+                background-image: url(darkbg.svg);
+                background-size: contain;
+                background-position: center;
+            }
+            #floating-header .humongous-button {
+                float: right;
+                margin: calc(60px - 1rem - 0.5em) 50px 0 0;
+            }
+            .hero-wrapper {
+                overflow: hidden;
+            }
+            .hero {
+                position: relative;
+                z-index: 0;
+            }
+            section:not(.footer) {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            }
+            section {
+                margin: 0;
+                padding: 0 1rem;
+                display: flex;
+                justify-content: space-between;
+                overflow: hidden;
+            }
+            section:first-of-type {
+                background-color: white;
+            }
+            section article {
+                flex-grow: 1;
+                align-self: center;
+            }
+            section.centered {
+                text-align: center;
+            }
+            section.footer {
+                text-align: center;
+            }
+            section > * {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+            .humongous-button {
+                display: inline-block;
+                text-decoration: none;
+                box-shadow: inset 0 -60px 30px -200px transparent,
+                            inset 0 0 0 4px #FFFFFF;
+                transition: box-shadow 0.2s, color 0.2s;
+                font-family: Lato;
+                font-weight: 700;
+                color: #FFFFFF;
+                margin: 1rem auto;
+                padding: 1rem;
+                border-radius: 4px;
+            }
+            .humongous-button.blue {
+                box-shadow: inset 0 -60px 30px -200px transparent,
+                            inset 0 0 0 4px #0B82D6;
+                color: #0B82D6;
+            }
+            .humongous-button:hover,
+            .humongous-button:focus,
+            .humongous-button:active {
+                transition: box-shadow 0.2s, color 0.2s;
+                box-shadow: inset 0 -60px 30px 30px #FFFFFF,
+                            inset 0 0 0 30px #FFFFFF;
+                color: #222222;
+            }
+            .humongous-button.blue:hover,
+            .humongous-button.blue:focus,
+            .humongous-button.blue:active {
+                box-shadow: inset 0 -60px 30px 30px #0B82D6,
+                            inset 0 0 0 30px #0B82D6;
+                color: #FFFFFF;
+            }
+            .humongous-button:active {
+                transition: box-shadow 0.2s, color 0.2s;
+                box-shadow: inset 0 -75px 30px 30px #CCCCCC,
+                            inset 0 0 0 30px #FFFFFF;
+            }
+            .humongous-button.blue:active {
+                box-shadow: inset 0 -60px 30px 30px #36B6FF,
+                            inset 0 0 0 30px #0B82D6;
+            }
+            h2 {
+                margin: 0 0 1.5rem;
+                font-size: 2rem;
+            }
+            @media (min-width: 1100px) {
+                .lg-flexrow {
+                    display: flex;
+                    flex-flow: row;
+                }
+                .lg-flexrow > * {
+                    flex-grow: 1;
+                    flex-basis: 1px;
+                }
+                .lg-flexrow section:not(:last-child) {
+                    border-right: 1px solid rgba(0, 0, 0, 0.2);
+                }
+            }
+            .footer {
+                display: flex;
+                flex-direction: row;
+            }
+            .footer figure {
+                display: flex;
+                flex-direction: row;
+                flex-grow: 1;
+                flex-basis: 1px;
+                margin: 0;
+                padding: 0;
+                text-align: left;
+                align-items: center;
+            }
+            .footer figure img {
+                height: 3rem;
+                width: 3rem;
+                border-radius: 4px;
+                float: left;
+                margin: 1rem;
+            }
+            .footer figure a {
+                text-decoration: none;
+                color: #000;
+            }
+            .footer figure:first-child img {
+                float: right;
+            }
+            .footer figure:first-child {
+                flex-direction: row-reverse;
+                text-align: right;
+                border-right: 1px solid rgba(0, 0, 0, 0.2);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="floating-header">
+            <a href="#" id="logolink"></a>
+            <a href="#" class="humongous-button">
+                Get StepUp! on your Pebble
+            </a>
+        </div>
+        <div class="hero-wrapper">
+            <div id="person-running" class="hero big-img"></div>
+        </div>
+        <div id="fakehero-wrapper">
+            <div id="fakehero"></div>
+        </div>
+        <div class="lg-flexrow">
+            <section>
+                <img class="product-img img-r" src="product-one.jpg"/>
+                <article>
+                    <h2>
+                        Get active.
+                    </h2>
+                    <p>
+                        StepUp helps you get active by pitching you against your friends.
+                    </p>
+                    <p>
+                        You can see how they did yesterday.
+                    </p>
+                    <p>
+                        By being reminded twice a day about how your friends did, you're reminded to get out and move.
+                    </p>
+                </article>
+            </section>
+            <section>
+                <img class="product-img img-l" src="product-two.jpg"/>
+                <article>
+                    <h2>
+                        Get connected.
+                    </h2>
+                    <p>
+                        It's easy to add friends on StepUp!
+                    </p>
+                    <p>
+                        Simply download StepUp, create your account, and send a friend request.
+                    </p>
+                    <p>
+                        Your friends can accept the request directly on their watch—no need to use their phone.
+                    </p>
+                </article>
+            </section>
+        </div>
+        <section class="centered">
+            <a href="#" class="humongous-button blue">
+                Get StepUp! on your Pebble
+            </a>
+        </section>
+        <section class="centered footer">
+            <figure>
+                <img src="kevin.png" />
+                <span>
+                    Kevin Wang<br/>
+                    <a href="https://twitter.com/010010110000110">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                </span>
+            </figure>
+            <figure>
+                <img src="jneubrand.png" />
+                <span>
+                    Johannes Neubrand<br/>
+                    <a href="https://github.com/jneubrand/">
+                        <i class="fa fa-github-alt"></i>
+                    </a>
+                    <a href="https://pebbledev.slack.com/team/johannesn">
+                        <i class="fa fa-slack"></i>
+                    </a>
+                </span>
+
+            </figure>
+        </section>
+        <script type='text/javascript'>
+            function scrollUpdate() {
+                document.getElementById('fakehero').style.top = -window.scrollY + 'px';
+            }
+            window.addEventListener('scroll', scrollUpdate);
+            scrollUpdate();
+        </script>
+    </body>
+</html>
