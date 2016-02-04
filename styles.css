@@ -87,6 +87,9 @@ body {
     z-index: 4;
     height: 125px;
 }
+#floating-header + section {
+    padding-top: calc(120px + 1rem);
+}
 #fakehero {
     position: absolute;
     top: 0;
@@ -139,14 +142,23 @@ section {
 section:first-of-type {
     background-color: white;
 }
+section.singlelink {
+    padding: 2rem;
+}
+section.singlelink a {
+    color: #999999;
+}
 section article {
     flex-grow: 1;
     align-self: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+section article.centeredtext {
+    max-width: 40rem;
+}
 section.centered {
-    text-align: center;
+    justify-content: center;
 }
 section.centered .humongous-button {
     margin: 2rem auto;
