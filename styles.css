@@ -1,0 +1,253 @@
+
+/* HACK: the entirety of CSS. */
+body {
+    margin: 0;
+    font-family: Lato, Helvetica, sans-serif;
+}
+.big-img {
+    height: calc(100vh - 9rem + 10px);
+    width: calc(100vw + 10px);
+    background-size: cover;
+    margin: -5px -5px 0;
+}
+.img-r {
+    order: 100;
+}
+.img-l {
+    order: 0;
+}
+.product-img {
+    height: auto;
+    max-height: 697px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin-top: -90px;
+    margin-bottom: -90px;
+    align-self: center;
+}
+@media screen and (max-width: 1300px) {
+    .product-img {
+        max-height: 520px;
+    }
+}
+@media screen and (max-width: 700px) {
+    .product-img {
+        max-height: 350px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        margin-top: -90px;
+        margin-bottom: -90px;
+        align-self: center;
+    }
+}
+#person-running {
+    background-image: url(person-running-opt.jpg);
+    background-position: 100% 50%;
+}
+#person-running-call-to-action {
+    background-image: url(person-running-footer-opt.jpg);
+    background-position: 50% 50%;
+    height: 25vw;
+    color: white;
+    background-repeat: none;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+#person-running-call-to-action .humongous-button {
+    margin: 0 4rem 0 0;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+@media (min-width: 800px) {
+    #person-running-call-to-action .humongous-button {
+        font-size: 140%;
+    }
+}
+@media (min-width: 1000px) {
+    #person-running-call-to-action .humongous-button {
+        font-size: 200%;
+    }
+}
+#floating-header, #fakehero-wrapper {
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    width: calc(100vw + 20px);
+    overflow: hidden;
+    display: block;
+    height: 120px;
+}
+#floating-header {
+    background: rgba(0, 0, 0, 0.3);
+}
+#fakehero-wrapper {
+    margin: -5px -5px 0;
+    z-index: 4;
+    height: 125px;
+}
+#fakehero {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    height: calc(100vh - 9rem + 10px);
+    width: calc(100vw + 10px);
+    overflow: hidden;
+    background: url(person-running-opt.jpg) no-repeat;
+    background-position: 100% 50%;
+    background-size: cover;
+    filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -khtml-filter: blur(4px);
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+    background-color: rgb(96, 127, 130);
+}
+#floating-header #logolink {
+    display: inline-block;
+    height: 120px;
+    width: 12rem;
+    margin-left: 6px;
+    background-image: url(darkbg.svg);
+    background-size: contain;
+    background-position: center;
+}
+#floating-header .humongous-button {
+    float: right;
+    margin: calc(60px - 1rem - 0.5em) 50px 0 0;
+}
+.hero-wrapper {
+    overflow: hidden;
+}
+.hero {
+    position: relative;
+    z-index: 0;
+}
+section:not(.footer) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+section {
+    margin: 0;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+section:first-of-type {
+    background-color: white;
+}
+section article {
+    flex-grow: 1;
+    align-self: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+section.centered {
+    text-align: center;
+}
+section.centered .humongous-button {
+    margin: 2rem auto;
+}
+section.footer {
+    text-align: center;
+}
+section > * {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.humongous-button {
+    display: inline-block;
+    text-decoration: none;
+    box-shadow: inset 0 -4em 2em -10em transparent,
+                inset 0 0 0 0.3em #FFFFFF;
+    transition: box-shadow 0.2s, color 0.2s;
+    font-family: Lato, Helvetica, sans-serif;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 1rem auto;
+    padding: 1em;
+    border-radius: 4px;
+}
+.humongous-button.blue {
+    box-shadow: inset 0 -4em 2em -10em transparent,
+                inset 0 0 0 4px #0B82D6;
+    color: #0B82D6;
+}
+.humongous-button:hover,
+.humongous-button:focus,
+.humongous-button:active {
+    transition: box-shadow 0.2s, color 0.2s;
+    box-shadow: inset 0 -4em 2em 2em #FFFFFF,
+                inset 0 0 0 2em #FFFFFF;
+    color: #222222;
+}
+.humongous-button.blue:hover,
+.humongous-button.blue:focus,
+.humongous-button.blue:active {
+    box-shadow: inset 0 -4em 2em 2em #0B82D6,
+                inset 0 0 0 2em #0B82D6;
+    color: #FFFFFF;
+}
+.humongous-button:active {
+    transition: box-shadow 0.2s, color 0.2s;
+    box-shadow: inset 0 -5em 2em 2em #CCCCCC,
+                inset 0 0 0 2em #FFFFFF;
+}
+.humongous-button.blue:active {
+    box-shadow: inset 0 -5em 2em 2em #36B6FF,
+                inset 0 0 0 2em #0B82D6;
+}
+h2 {
+    margin: 0 0 1.5rem;
+    font-size: 2rem;
+}
+@media (min-width: 1000px) {
+    .lg-flexrow {
+        display: flex;
+        flex-flow: row;
+    }
+    .lg-flexrow > * {
+        flex-grow: 1;
+        flex-basis: 1px;
+    }
+    .lg-flexrow section:not(:last-child) {
+        border-right: 1px solid rgba(0, 0, 0, 0.2);
+    }
+}
+.footer {
+    display: flex;
+    flex-direction: row;
+}
+.footer figure {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-basis: 1px;
+    margin: 0;
+    padding: 1rem;
+    text-align: left;
+    align-items: center;
+}
+.footer figure img {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 4px;
+    float: left;
+    margin: 1rem;
+}
+.footer figure a {
+    text-decoration: none;
+    color: #000;
+    margin: 0 0.2rem;
+}
+.footer figure:first-child img {
+    float: right;
+}
+.footer figure:first-child {
+    flex-direction: row-reverse;
+    text-align: right;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
