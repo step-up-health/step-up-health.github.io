@@ -266,6 +266,10 @@ h2 {
     flex-direction: row-reverse;
     text-align: right;
     border-right: 1px solid rgba(0, 0, 0, 0.2);
+    padding-left: 0;
+}
+.footer figure:last-child {
+    padding-right: 0;
 }
 @media screen and (max-width: 500px),
        screen and (max-height: 500px) {
@@ -274,6 +278,12 @@ h2 {
     }
     #person-running-call-to-action .humongous-button {
         margin: 0 2rem 0 0;
+    }
+    section.footer a {
+        padding: 0.2rem 0.4em;
+        border: 1px solid #BBB;
+        display: inline-block;
+        border-radius: 0.4rem;
     }
 }
 @media screen and (max-width: 500px) {
