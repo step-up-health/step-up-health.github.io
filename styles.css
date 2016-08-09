@@ -43,7 +43,7 @@ main h2 {
 }
 @media (min-width: 1500px) {
     main h2 {
-        font-size: calc(75px - 0.2rem);
+        font-size: calc(67.5px - 0.2rem);
     }
 }
 @media (max-width: 1000px) {
