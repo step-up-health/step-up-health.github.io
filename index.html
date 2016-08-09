@@ -9,120 +9,41 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <title>StepUp! for Pebble</title>
     </head>
-    <body>
-        <div id="floating-header">
+    <body id="landing-page">
+        <header>
             <a href="#" id="logolink"></a>
             <a href="https://apps.getpebble.com/applications/56ad59219f30b5559400004d" class="humongous-button">
-                Get StepUp! on your Pebble
+                Pebble App Store
             </a>
-        </div>
-        <div class="hero-wrapper">
-            <div id="person-running" class="hero big-img"></div>
-        </div>
-        <div id="fakehero-wrapper">
-            <div id="fakehero"></div>
-        </div>
-        <div class="lg-flexrow">
-            <section>
-                <img class="product-img img-r" src="product-one.png"/>
-                <article>
-                    <h2>
-                        Get active.
-                    </h2>
-                    <p>
-                        StepUp helps you get active by pitching you against your friends.
-                    </p>
-                    <p>
-                        You can see how many steps they made yesterday.
-                    </p>
-                    <p>
-                        By being reminded twice a day about how your friends did, you'll be motivated to get out and move.
-                    </p>
-                </article>
-            </section>
-            <section>
-                <img class="product-img img-l" src="product-two.png"/>
-                <article>
-                    <h2>
-                        Get connected.
-                    </h2>
-                    <p>
-                        It's easy to add friends on StepUp!
-                    </p>
-                    <p>
-                        Simply download StepUp, create your account, and send a friend request.
-                    </p>
-                    <p>
-                        Your friends can accept the request directly on their watch.
-                    </p>
-                </article>
-            </section>
-        </div>
-        <section class="centered" id="person-running-call-to-action">
-            <a href="https://apps.getpebble.com/applications/56ad59219f30b5559400004d" class="humongous-button blue">
-                Get StepUp! on your Pebble
-            </a>
-        </section>
-        <section class="centered singlelink">
-            <a href="policies.html">
-                Find out how we treat your data
-            </a>
-        </section>
-        <section class="centered footer">
-            <figure>
-                <img src="kevin.png" />
+        </header>
+        <main>
+            <h2>
+                Get&nbsp;active. Get&nbsp;connected. StepUp.
+            </h2>
+            <img class="product-img" src="product-img.png"/>
+        </main>
+        <footer>
+            <span>
+                <a href="policies.html">
+                    Privacy &amp; Terms
+                </a>
+            </span>
+            <i class="bullet"></i>
+            <span>
                 <span>
-                    Kevin Wang<br/>
+                    Johannes Neubrand
+                    <a href="https://github.com/jneubrand/"><i class="fa fa-github-alt"></i></a>
+                </span>
+                <i class="bullet"></i>
+                <span>
+                    Kevin Wang
                     <a href="https://twitter.com/010010110000110">
                         <i class="fa fa-twitter"></i>
                     </a>
                 </span>
-            </figure>
-            <figure>
-                <img src="jneubrand.png" />
-                <span>
-                    Johannes Neubrand<br/>
-                    <a href="https://jneubrand.github.io/">
-                        <i class="fa fa-link"></i>
-                    </a>
-                    <a href="https://github.com/jneubrand/">
-                        <i class="fa fa-github-alt"></i>
-                    </a>
-                    <a href="https://pebbledev.slack.com/team/johannesn">
-                        <i class="fa fa-slack"></i>
-                    </a>
-                </span>
-            </figure>
-        </section>
-        <script type='text/javascript'>
-            var mobile = /iPhone|iPod|iPad|Android|Windows Phone|Safari/i.test(navigator.userAgent.toLowerCase());
-            if (!mobile) {
-                function scrollUpdate() {
-                    document.getElementById('fakehero').style.top = -window.scrollY + 'px';
-                }
-                window.addEventListener('scroll', scrollUpdate);
-                scrollUpdate();
-            } else {
-                var fakehero = document.getElementById('fakehero');
-                fakehero.parentNode.removeChild(fakehero);
-            }
-        </script>
+            </span>
+        </footer>
         <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300,400italic' rel='stylesheet' type='text/css' />
         <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet' type='text/css' />
-        <!-- Piwik -->
-        <script type="text/javascript">
-        var _paq = _paq || [];
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function() {
-            var u="//piwik-stepupforpebble.rhcloud.com/";
-            _paq.push(['setTrackerUrl', u+'piwik.php']);
-            _paq.push(['setSiteId', 1]);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-        })();
-        </script>
-        <noscript><p><img src="//piwik-stepupforpebble.rhcloud.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-        <!-- End Piwik Code -->
     </body>
 </html>
